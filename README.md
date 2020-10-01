@@ -1,5 +1,5 @@
 # gui
-GUI for pod, built with React
+GUI for pod, built with React. Check out the [resources wiki page](https://github.com/cal-poly-hyperloop-controls/gui/wiki/Resources) as well! 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
