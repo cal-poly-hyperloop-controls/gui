@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './index.scss';
 
 //Import Local Files
@@ -16,13 +16,15 @@ import IconButton from '../../components/IconButton';
  * Contains all the views displaying pod data
  */
 const DockContainer = () => {
+  const [chartOpen, setchartOpen] = useState(false);
+
   return (
-    <div className='DockContainer'>
+    <div className={chartOpen ? 'DockContainer open' : 'DockContainer'}>
       <div className='trapezoid' />
       <div className='buttonsContainer'>
         <IconButton
           title='Chart'
-          onClick={() => console.log('Chart button clicked')}
+          onClick={() => setchartOpen(!chartOpen)}
           icon='Chart'
           iconColor={Colors.white}
         />
