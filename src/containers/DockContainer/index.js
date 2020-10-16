@@ -22,8 +22,32 @@ const DockContainer = () => {
       <div className='buttonsContainer'>
         <IconButton
           title='Chart'
-          onClick={() => console.log('button clicked')}
-          icon='chart'
+          onClick={() => console.log('Chart button clicked')}
+          icon='Chart'
+          iconColor={Colors.white}
+        />
+        <IconButton
+          title='Generate Report'
+          onClick={() => console.log('Generate Report button clicked')}
+          icon='Report'
+          iconColor={Colors.white}
+        />
+        <IconButton
+          title='Launch'
+          onClick={() => console.log('Launch button clicked')}
+          icon='Launch'
+          iconColor={Colors.white}
+        />
+        <IconButton
+          title='Emergency Stop'
+          onClick={() => console.log('Emergency Stop button clicked')}
+          icon='Stop'
+          iconColor={Colors.red}
+        />
+        <IconButton
+          title='Info'
+          onClick={() => console.log('Info button clicked')}
+          icon='Info'
           iconColor={Colors.white}
         />
       </div>

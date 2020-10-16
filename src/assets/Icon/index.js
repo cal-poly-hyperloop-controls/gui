@@ -22,11 +22,12 @@ const iconTypes = {
  * Renders an icon
  * @param {String} props.name - name of the icon to render
  * @param {String} props.fill - color to render icon in
+ * @param {String} props.className - additional styles
  * @return {JSX.Element}
  */
 const Icon = props => {
   let Icon = iconTypes[props.name];
-  return <Icon fill={props.fill} />;
+  return <Icon className={props.className} fill={props.fill} />;
 };
 
 export default Icon;

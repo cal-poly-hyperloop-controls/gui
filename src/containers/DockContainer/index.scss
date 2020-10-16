@@ -21,7 +21,10 @@
 }
 
 .buttonsContainer {
-  background: $red;
   position: absolute;
-  top: -90px;
+  top: -76px;
+  display: flex;
+  text-align: center;
+  width: 530px;
+  justify-content: space-between;
 }

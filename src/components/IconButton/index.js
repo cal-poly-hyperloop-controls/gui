@@ -17,8 +17,8 @@ import Icon from '../../assets/Icon';
  */
 const IconButton = props => {
   return (
-    <div className='IconButton' onClick={() => console.log('button clicked')}>
-      <Icon name='Checkmark' fill='red' />
+    <div className='IconButton' onClick={props.onClick}>
+      <Icon className='Icon' name={props.icon} fill={props.iconColor} />
       <p>{props.title}</p>
     </div>
   );
