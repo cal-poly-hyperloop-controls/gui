@@ -68,3 +68,8 @@ body {
 code {
   font-family: 'Lato-Regular';
 }
+
+/* The following line prevents dragging ghost images */
+img {
+  -webkit-user-drag: none;
+}

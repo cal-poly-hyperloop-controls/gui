@@ -30,5 +30,6 @@ const styles = {
     backgroundImage: `url(${BackgroundImage})`,
     backgroundSize: 'contain',
     overflow: 'hidden',
+    userSelect: 'none',
   },
 };
