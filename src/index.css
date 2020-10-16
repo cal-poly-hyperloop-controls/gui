@@ -1,3 +1,57 @@
+@font-face {
+  font-family: 'Lato-Bold';
+  src: local('Lato-Bold'),
+    url('./assets/Fonts/Lato-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato-Hairline';
+  src: local('Lato-Hairline'),
+    url('./assets/Fonts/Lato-Hairline.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato-Light';
+  src: local('Lato-Light'),
+    url('./assets/Fonts/Lato-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato-LightItalic';
+  src: local('Lato-LightItalic'),
+    url('./assets/Fonts/Lato-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato-Medium';
+  src: local('Lato-Medium'),
+    url('./assets/Fonts/Lato-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato-Regular';
+  src: local('Lato-Regular'),
+    url('./assets/Fonts/Lato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato-Semibold';
+  src: local('Lato-Semibold'),
+    url('./assets/Fonts/Lato-Semibold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato-Thin';
+  src: local('Lato-Thin'),
+    url('./assets/Fonts/Lato-Thin.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato-ThinItalic';
+  src: local('Lato-ThinItalic'),
+    url('./assets/Fonts/Lato-ThinItalic.ttf') format('truetype');
+}
+
 html,
 body,
 #root {
@@ -6,14 +60,11 @@ body,
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Lato-Regular';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Lato-Regular';
 }
