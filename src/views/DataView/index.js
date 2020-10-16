@@ -28,7 +28,6 @@ const DataView = () => {
       <ProgressBar />
       <StatusBullet />
       <StatusIcon />
-      <IconButton />
     </div>
   );
 };
