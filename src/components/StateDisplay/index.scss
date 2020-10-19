@@ -4,4 +4,27 @@
   background: $white;
   position: absolute;
   top: 500px;
+  background-color: transparent;
+  border-radius: 75px;
+  border: 3px solid $lightPurple;
+  width: 264px;
+  text-align: center;
+  padding-top: 7px;
+  padding-bottom: 15px;
+}
+
+.STATE{
+ color: $lightPurple;
+ margin-bottom: 7px;
+ font-size: 14px;
+}
+
+.title{
+ color:white;
+ font-size: 20px;
+}
+
+p{
+  margin: 0
+
 }

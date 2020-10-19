@@ -24,7 +24,7 @@ const DataView = () => {
       <img className='pod' src={podImage} alt='pod' />
       <DistanceBar />
       <Dial />
-      <StateDisplay />
+      <StateDisplay title = 'READY TO LAUNCH'/>
       <ProgressBar />
       <StatusBullet />
       <StatusIcon />
