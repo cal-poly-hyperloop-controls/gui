@@ -11,6 +11,7 @@ import Colors from '../../constants/Colors';
 
 //Import Components
 import IconButton from '../../components/IconButton';
+import Chart from '../../components/Chart';
 
 /**
  * Contains all the views displaying pod data
@@ -53,6 +54,8 @@ const DockContainer = () => {
           iconColor={Colors.white}
         />
       </div>
+
+      <Chart />
     </div>
   );
 };
