@@ -1,0 +1,23 @@
+@import '../../constants/colors';
+
+.IconButton {
+  padding: 10px;
+  transition: 0.5s;
+}
+
+.IconButton:active {
+  padding: 10px;
+  transform: scale(1.2);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.IconButton p {
+  color: $lightPurple;
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+.Icon {
+  width: 32px;
+  height: 32px;
+}
