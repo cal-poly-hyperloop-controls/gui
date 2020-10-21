@@ -5,13 +5,39 @@ import './index.scss';
 //...
 
 //Import Components
-//...
+import {
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend
+} from 'recharts';
 
 /**
- * Contains all the views displaying pod data
+ * Chart, using recharts: recharts.org
  */
 const Chart = () => {
-  return <div className='Chart'></div>;
+  
+  
+  // Generate dummy data for testing
+  const dummyData = generateDummyData();
+  console.log(dummyData)
+
+  return (
+    <div className='Chart'>
+      <LineChart 
+        width={600} 
+        height={300} 
+        data={dummyData}
+        margin={{top: 5, right: 30, left: 20, bottom: 5}}
+      >
+        <XAxis dataKey="x"/>
+        <YAxis/>
+        <CartesianGrid strokeDasharray="3 3"/>
+        <Tooltip/>
+        <Legend />
+        <Line type="monotone" dataKey="y" stroke="#8884d8" activeDot={{r: 8}}/>
+      </LineChart>
+
+    </div>
+  
+  );
 };
 
 
@@ -40,4 +66,5 @@ const generateDummyData = (length=10, dx=1, yMax=10) => {
 
   return data;
 }
+
 export default Chart;
