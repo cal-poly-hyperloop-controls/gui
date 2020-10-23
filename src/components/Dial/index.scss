@@ -1,7 +1,46 @@
 @import '../../constants/colors';
 
 .Dial {
-  background: $white;
   position: absolute;
-  top: 300px;
+  top: 100px;
+  display: flex;
+}
+
+.Dial .dialSvg {
+  flex: 1;
+}
+
+.Dial .animatedDialElement {
+  transition: 1s;
+}
+
+.Dial .dataContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  width: 100%;
+  text-align: center;
+  align-self: center;
+}
+
+.Dial .title {
+  color: #ffffff;
+  font-family: 'Lato-thin';
+  font-size: 20px;
+  margin: 0;
+}
+
+.Dial .value {
+  color: #ffffff;
+  font-family: 'Lato-Regular';
+  font-size: 72px;
+  margin: 30px;
+}
+
+.Dial .unit {
+  color: #ffffff;
+  font-family: 'Lato-thin';
+  font-size: 24px;
+  margin: 0;
 }

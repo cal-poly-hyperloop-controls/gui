@@ -8,7 +8,7 @@ import './index.scss';
 import Icon from '../../assets/Icon';
 
 /**
- * Contains all the views displaying pod data
+ * Displays a button composed of an icon and text
  * @param {String} props.title - title to show on button
  * @param {Func} props.onClick - function to call on click
  * @param {String} props.icon - icon name to render
