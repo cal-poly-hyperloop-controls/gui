@@ -5,7 +5,7 @@ import './index.scss';
 import Colors from '../../constants/Colors';
 
 //Import Components
-//...
+import CountUp from 'react-countup';
 
 /**
  * Renders a dial that displays the data passed in
@@ -194,7 +194,9 @@ const Dial = props => {
       </svg>
       <div className='dataContainer'>
         <h5 className='title'>{props.title}</h5>
-        <h5 className='value'>{props.value.toFixed(1)}</h5>
+        <h5 className='value'>
+          <CountUp end={props.value} duration={1} decimals={1} />
+        </h5>
         <h5 className='unit'>{props.unit}</h5>
       </div>
     </div>
