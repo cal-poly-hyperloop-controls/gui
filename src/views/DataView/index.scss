@@ -4,15 +4,46 @@
   justify-content: center;
 }
 
-.pod {
+.DataView .pod {
   width: 1103px;
   height: 625px;
   position: absolute;
   bottom: 0px;
 }
 
-.logo {
+.DataView .logo {
   position: absolute;
   left: 15px;
   top: 30px;
 }
+
+.DataView .centerDisplay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 70px;
+    height: fit-content;
+}
+
+.DataView .centerDialContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-bottom: 15px;
+}
+
+.DataView .speedDial {
+  top: 0px;
+  margin: 0 -20px;
+}
+
+.DataView .accelDial {
+  top: 75px;
+  
+}
+
+.DataView .maglevDial {
+  top: 75px;
+}
+

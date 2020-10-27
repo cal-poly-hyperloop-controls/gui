@@ -17,31 +17,66 @@ import StatusIcon from '../../components/StatusIcon';
  * Displays all the data components. Pretty much most of what you see in the GUI
  */
 const DataView = () => {
-  const [val, setVal] = useState(21.5);
+  const [speed, setSpeed] = useState(0);
+  const [acceleration, setAcceleration] = useState(0);
+  const [maglev, setMaglev] = useState(0);
 
   useEffect(() => {
     //TEMPORARY: randomizes a value to demonstrate dial animations
     setTimeout(() => {
-      setVal(Math.random(1) * 105);
+      setSpeed(Math.random(1) * 105);
+      setAcceleration(Math.random(1) * 25);
+      setMaglev(Math.random(1) * 15);
     }, 2000);
-  });
+  }, [acceleration]);
 
   return (
     <div className='DataView'>
       <img className='logo' src={logoImage} alt='logo' />
       <img className='pod' src={podImage} alt='pod' />
       <DistanceBar />
-      <Dial
-        title='POD SPEED'
-        value={val}
-        unit='M/S'
-        min={0}
-        max={100}
-        size={400}
-        threshold={0.15}
-        errorThreshold={0.05}
-      />
-      <StateDisplay title='READY TO LAUNCH' />
+
+      <div className='centerDisplay'>
+        <div className='centerDialContainer'>
+          <Dial
+            title='Acceleration'
+            value={acceleration}
+            unit='M/S²'
+            min={0}
+            max={20}
+            size={200}
+            threshold={0.15}
+            errorThreshold={0.05}
+            customClass='accelDial'
+            rotation={-45}
+          />
+          <Dial
+            title='POD SPEED'
+            value={speed}
+            unit='M/S'
+            min={0}
+            max={100}
+            size={400}
+            threshold={0.15}
+            errorThreshold={0.05}
+            customClass='speedDial'
+          />
+          <Dial
+            title='MagLev Levitation'
+            value={maglev}
+            unit='MM'
+            min={0}
+            max={10}
+            size={200}
+            threshold={0.10}
+            errorThreshold={0.05}
+            customClass='maglevDial'
+            rotation={45}
+            mirror={true}
+          />
+        </div>
+        <StateDisplay title='READY TO LAUNCH' />
+      </div>
       <ProgressBar />
       <StatusBullet />
       <StatusIcon />

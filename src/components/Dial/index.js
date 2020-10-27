@@ -17,6 +17,8 @@ import CountUp from 'react-countup';
  * @param {Number} props.threshold - show dial in yellow if value is within this threshold percentage of the min/max values
  * @param {Number} props.errorThreshold - show dial in yellow if value is greather than min/max by this percentage (must be smaller than threshold)
  * @param {Number} props.size - scale the dial’s size by this value
+ * @param {Number} props.rotation - value to rotate dial by in degrees [OPTIONAL]
+ * @param {Boolean} props.mirror - if true, the dial will fill from right to left [OPTIONAL]
  * @param {String} props.customClass -  used to add custom styles to component
  * @return {JSX.Element}
  */
@@ -45,7 +47,6 @@ const Dial = props => {
     percent = 1;
   }
 
-  console.log(percent);
   //The section below is used to make the necessary calculations to construct the thin line base of the dial
   //This value is used to construct the semiCircle shape displaying 285 degrees of the circumfrence
   const circleAngle = 285;
@@ -182,22 +183,28 @@ const Dial = props => {
   };
 
   return (
-    <div className='Dial' style={{ width: props.size, height: props.size }}>
-      <svg className='dialSvg'>
+    <div
+      className={`Dial ${props.customClass}`}
+      style={{ width: props.size, height: props.size }}>
+      <svg className='dialSvg' style={{transform: `rotate(${props.rotation}deg) scale(${props.mirror?-1:1},1)`}}>
         <circle ref={base}></circle>
         <circle className='animatedDialElement' ref={progress} />
-        <circle className='animatedDialElement' ref={progressPoint} />
+        <circle className='animatedDialElement2' ref={progressPoint} />
         {renderTick(props.min)}
         {renderTick(props.max)}
         {renderTick(warningMin)}
         {renderTick(warningMax)}
       </svg>
       <div className='dataContainer'>
-        <h5 className='title'>{props.title}</h5>
-        <h5 className='value'>
+        <h5 className='title' style={{ fontSize: 0.05 * props.size }}>
+          {props.title}
+        </h5>
+        <h5 className='value' style={{ fontSize: 0.18 * props.size }}>
           <CountUp end={props.value} duration={1} decimals={1} />
         </h5>
-        <h5 className='unit'>{props.unit}</h5>
+        <h5 className='unit' style={{ fontSize: 0.06 * props.size }}>
+          {props.unit}
+        </h5>
       </div>
     </div>
   );
