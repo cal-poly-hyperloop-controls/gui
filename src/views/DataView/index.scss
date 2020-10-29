@@ -17,16 +17,16 @@
   top: 30px;
 }
 
-.DataView .centerDisplay{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    top: 70px;
-    height: fit-content;
+.DataView .centerDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 70px;
+  height: fit-content;
 }
 
-.DataView .centerDialContainer{
+.DataView .centerDialContainer {
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -40,10 +40,14 @@
 
 .DataView .accelDial {
   top: 75px;
-  
 }
 
 .DataView .maglevDial {
   top: 75px;
 }
 
+.DataView .FBPContainer {
+  position: absolute;
+  right: 50px;
+  top: 195px;
+}

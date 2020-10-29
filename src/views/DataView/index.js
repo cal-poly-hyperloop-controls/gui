@@ -20,6 +20,8 @@ const DataView = () => {
   const [speed, setSpeed] = useState(0);
   const [acceleration, setAcceleration] = useState(0);
   const [maglev, setMaglev] = useState(0);
+  const [FBPVoltage, setFBPVoltage] = useState(0);
+  const [FBPCurrent, setFBPCurrent] = useState(0);
 
   useEffect(() => {
     //TEMPORARY: randomizes a value to demonstrate dial animations
@@ -27,6 +29,8 @@ const DataView = () => {
       setSpeed(Math.random(1) * 105);
       setAcceleration(Math.random(1) * 25);
       setMaglev(Math.random(1) * 15);
+      // setFBPVoltage(Math.random(1) * 100);
+      setFBPCurrent(Math.random(1) * 500);
     }, 2000);
   }, [acceleration]);
 
@@ -68,7 +72,7 @@ const DataView = () => {
             min={0}
             max={10}
             size={200}
-            threshold={0.10}
+            threshold={0.1}
             errorThreshold={0.05}
             customClass='maglevDial'
             rotation={45}
@@ -77,7 +81,26 @@ const DataView = () => {
         </div>
         <StateDisplay title='READY TO LAUNCH' />
       </div>
-      <ProgressBar />
+
+      <div className='FBPContainer'>
+        <ProgressBar
+          title='F.B.P. Voltage'
+          value={FBPVoltage}
+          unit='V'
+          min={40}
+          max={72}
+          decimals={1}
+        />
+        <ProgressBar
+          title='F.B.P. Current'
+          value={FBPCurrent}
+          unit='A'
+          min={0}
+          max={480}
+          decimals={0}
+        />
+      </div>
+
       <StatusBullet />
       <StatusIcon />
     </div>

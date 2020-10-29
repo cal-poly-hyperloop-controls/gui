@@ -1,8 +1,80 @@
 @import '../../constants/colors';
 
 .ProgressBar {
-  background: $white;
+  width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ProgressBar .barContainer {
+}
+
+.ProgressBar .left,
+.center,
+.right {
   position: absolute;
-  right: 50px;
-  top: 268px;
+  height: 6px;
+  transition: 1s;
+}
+
+.ProgressBar .left,
+.right {
+  width: 4px;
+}
+
+.ProgressBar .left {
+  border-radius: 3px 0 0 3px;
+}
+.ProgressBar .right {
+  border-radius: 0 3px 3px 0;
+  left: 3px;
+}
+.ProgressBar .center {
+  left: 7px;
+  width: 1px;
+  transform-origin: left;
+}
+
+.ProgressBar .title {
+  color: $white;
+  font-family: 'Lato-Regular';
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+.ProgressBar .base {
+  width: 150px;
+  height: 6px;
+  background: rgba(148, 153, 195, 0.2);
+  border-radius: 10px;
+  margin: 10px 4px 3px 4px;
+  display: flex;
+}
+
+.ProgressBar .progress {
+  height: 100%;
+  width: 95%;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.ProgressBar .min {
+  color: $lightPurple;
+  font-family: 'Lato-Regular';
+  font-size: 9px;
+  float: left;
+}
+
+.ProgressBar .max {
+  color: $lightPurple;
+  font-family: 'Lato-Regular';
+  font-size: 9px;
+  float: right;
+}
+
+.ProgressBar .value {
+  color: $white;
+  font-family: 'Lato-Bold';
+  font-size: 20px;
 }
