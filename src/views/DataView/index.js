@@ -12,6 +12,7 @@ import StateDisplay from '../../components/StateDisplay';
 import ProgressBar from '../../components/ProgressBar';
 import StatusBullet from '../../components/StatusBullet';
 import StatusIcon from '../../components/StatusIcon';
+import Colors from '../../constants/Colors';
 
 /**
  * Displays all the data components. Pretty much most of what you see in the GUI
@@ -102,7 +103,10 @@ const DataView = () => {
       </div>
 
       <StatusBullet />
-      <StatusIcon />
+      <StatusIcon 
+        health={true}
+        iconColor={Colors.black}
+      />
     </div>
   );
 };
