@@ -30,7 +30,7 @@ const DataView = () => {
       setSpeed(Math.random(1) * 105);
       setAcceleration(Math.random(1) * 25);
       setMaglev(Math.random(1) * 15);
-      // setFBPVoltage(Math.random(1) * 100);
+       //setFBPVoltage(Math.random(1) * 100);
       setFBPCurrent(Math.random(1) * 500);
     }, 2000);
   }, [acceleration]);
@@ -40,7 +40,11 @@ const DataView = () => {
       <img className='logo' src={logoImage} alt='logo' />
       <img className='pod' src={podImage} alt='pod' />
       <DistanceBar />
-
+      <StatusBullet 
+        title='ALL SYSTEMS CHECK'
+        statusMessage='Safe'
+        health={true}
+      />
       <div className='centerDisplay'>
         <div className='centerDialContainer'>
           <Dial
@@ -102,11 +106,8 @@ const DataView = () => {
         />
       </div>
 
-      <StatusBullet />
-      <StatusIcon 
-        health={true}
-        iconColor={Colors.black}
-      />
+      
+      
     </div>
   );
 };

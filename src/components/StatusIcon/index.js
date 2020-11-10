@@ -22,7 +22,7 @@ const StatusIcon = props => {
   }
   return (
     <div className='StatusIcon' style={{background:statusColor}}>
-        <Icon className='Status' name={iconName} fill={props.iconColor}/>
+        <Icon name={iconName} fill={props.iconColor}/>
     </div>
   )
 };
