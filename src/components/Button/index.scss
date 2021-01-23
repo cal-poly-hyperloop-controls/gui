@@ -2,5 +2,14 @@
 
 .Button {
   background: $white;
-  position: absolute;
+  color: $black;
+  position: relative;
+  border-radius: 6px;
+  padding: 20px 32px;
+  font-weight: 600;
+  transition:0.1s;
+}
+
+.Button:active {
+  transform: scale(.95);
 }

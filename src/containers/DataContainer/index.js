@@ -15,11 +15,11 @@ const DataContainer = () => {
   return (
     <div className='DataContainer'>
       <DataView />
-      <div id='systemButton'>
-        <Button />
+      <div class='systemButton'>
+        <Button title='SYSTEMS' onClick={()=>console.log('system button clicked')}/>
       </div>
-      <div id='batteryCellButton'>
-        <Button />
+      <div class='batteryCellContainer'>
+        <Button title='BATTERY CELLS' onClick={()=>console.log('battery cell button clicked')} className='batteryButton'/>
       </div>
     </div>
   );
