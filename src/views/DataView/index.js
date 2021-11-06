@@ -21,8 +21,26 @@ const DataView = () => {
   const [speed, setSpeed] = useState(0);
   const [acceleration, setAcceleration] = useState(0);
   const [maglev, setMaglev] = useState(0);
+  const [solTemp, setSolTemp] = useState(0);
+  const [tensPres, setTensPres] = useState(0);
+  const [fTensTemp, setFTensTemp] = useState(0);
+  const [tensATTemp, settensATTemp] = useState(0);
+  const [rTensTemp, setRTensTemp] = useState(0);
+  const [brakingATTemp, setBrakingATTemp] = useState(0);
+  const [FBPHTemp, setFBPHTemp] = useState(0);
+  const [FBPLTemp, setFBPLTemp] = useState(0);
+  const [FBPATemp, setFBPATemp] = useState(0);
+  const [FBPA2Temp, setFBPA2Temp] = useState(0);
+  const [FBPA3Temp, setFBPA3Temp] = useState(0);
+  const [FBPA4Temp, setFBPA4Temp] = useState(0);
+  const { innerWidth: width, innerHeight: height } = window;
+
+
   const [FBPVoltage, setFBPVoltage] = useState(0);
   const [FBPCurrent, setFBPCurrent] = useState(0);
+  const [FBPStateOfCharge, setFBPStateOfCharge] = useState(0);
+  const [FBPIsolator, setFBPIsolator] = useState(0);
+
 
   useEffect(() => {
     //TEMPORARY: randomizes a value to demonstrate dial animations
@@ -30,8 +48,23 @@ const DataView = () => {
       setSpeed(Math.random(1) * 105);
       setAcceleration(Math.random(1) * 25);
       setMaglev(Math.random(1) * 15);
-       //setFBPVoltage(Math.random(1) * 100);
-      setFBPCurrent(Math.random(1) * 500);
+      setSolTemp((Math.random(1) * 50) - 20);
+      setTensPres((Math.random(1) * 60) + 30);
+      setFTensTemp((Math.random(1) * 65) + 15);
+      settensATTemp((Math.random(1) * 100) - 20);
+      setRTensTemp((Math.random(1) * 65) + 15);
+      setBrakingATTemp((Math.random(1) * 100));
+      setFBPHTemp((Math.random(1) * 120) - 20);
+      setFBPLTemp((Math.random(1) * 120) - 20);
+      setFBPATemp((Math.random(1) * 120) - 20);
+      setFBPA2Temp((Math.random(1) * 120) - 20);
+      setFBPA3Temp((Math.random(1) * 120) - 20);
+      setFBPA4Temp((Math.random(1) * 120) - 20);
+
+      setFBPVoltage(Math.random(1) * 32 + 40);
+      setFBPCurrent(Math.random(1) * 490);
+      setFBPStateOfCharge(Math.random(1) * 100);
+      setFBPIsolator((Math.random(1) * 50) / 10);
     }, 2000);
   }, [acceleration]);
 
@@ -48,12 +81,78 @@ const DataView = () => {
       <div className='centerDisplay'>
         <div className='centerDialContainer'>
           <Dial
+            title = 'Tensioner Pressure'
+            value = {tensPres}
+            unit = 'PSI'
+            min={30.1}
+            max={90}
+            size={width / 12.5}
+            threshold={0.15}
+            errorThreshold={0.05}
+            customClass='tensPresDial'
+          />
+          <Dial
+            title = 'Front Tensioner Temp'
+            value = {fTensTemp}
+            unit = '°C'
+            min={15}
+            max={80}
+            size={width / 12.5}
+            threshold={0.15}
+            errorThreshold={0.05}
+            customClass='fTensTempDial'
+          />
+          <Dial
+            title = 'Tensioner Air Tank Temp'
+            value = {tensATTemp}
+            unit = '°C'
+            min={-19.9}
+            max={80}
+            size={width / 12.5}
+            threshold={0.15}
+            errorThreshold={0.05}
+            customClass='tensATTempDial'
+          />
+          <Dial
+            title = 'Rear Tensioner Temp'
+            value = {rTensTemp}
+            unit = '°C'
+            min={15}
+            max={80}
+            size={width / 12.5}
+            threshold={0.15}
+            errorThreshold={0.05}
+            customClass='rTensTempDial'
+          />
+          <Dial
+            title = 'Braking Air Tank Temp'
+            value = {brakingATTemp}
+            unit = '°C'
+            min={-19.9}
+            max={80}
+            size={width / 12.5}
+            threshold={0.15}
+            errorThreshold={0.05}
+            customClass='brakingATTempDial'
+          />
+          <Dial
+            title = 'Solenoid Temp'
+            value = {solTemp}
+            unit = '°C'
+            min={-19.9}
+            max={30}
+            size={width / 12.5}
+            threshold={0.15}
+            errorThreshold={0.05}
+            customClass='solTempDial'
+          />
+          <Dial
             title='Acceleration'
             value={acceleration}
             unit='M/S²'
             min={0}
             max={20}
-            size={200}
+            size={width / 10}
             threshold={0.15}
             errorThreshold={0.05}
             customClass='accelDial'
@@ -65,7 +164,7 @@ const DataView = () => {
             unit='M/S'
             min={0}
             max={100}
-            size={400}
+            size={width / 5}
             threshold={0.15}
             errorThreshold={0.05}
             customClass='speedDial'
@@ -76,15 +175,85 @@ const DataView = () => {
             unit='MM'
             min={0}
             max={10}
-            size={200}
+            size={width/10}
             threshold={0.1}
             errorThreshold={0.05}
             customClass='maglevDial'
             rotation={45}
             mirror={true}
           />
+          <Dial
+            title = 'F.B.P. High Temp'
+            value = {FBPHTemp}
+            unit = '°C'
+            min={0}
+            max={100}
+            size={width / 12.5}
+            threshold={0.15}
+            errorThreshold={0.05}
+            customClass='FBPHTempDial'
+          />
+          <Dial
+            title = 'F.B.P. Low Temp'
+            value = {FBPLTemp}
+            unit = '°C'
+            min={0}
+            max={100}
+            size={width / 12.5}
+            threshold={0.15}
+            errorThreshold={0.05}
+            customClass='FBPLTempDial'
+          />
+          <Dial
+            title = 'F.B.P. Average Temp'
+            value = {FBPATemp}
+            unit = '°C'
+            min={0}
+            max={100}
+            size={width / 12.5}
+            threshold={0.15}
+            errorThreshold={0.05}
+            customClass='FBPATempDial'
+          />
+          <Dial
+            title = 'F.B.P. Average Temp'
+            value = {FBPA2Temp}
+            unit = '°C'
+            min={0}
+            max={100}
+            size={width / 12.5}
+            threshold={0.15}
+            errorThreshold={0.05}
+            customClass='FBPA2TempDial'
+          />
+          <Dial
+            title = 'F.B.P. Average Temp'
+            value = {FBPA3Temp}
+            unit = '°C'
+            min={0}
+            max={100}
+            size={width / 12.5}
+            threshold={0.15}
+            errorThreshold={0.05}
+            customClass='FBPA3TempDial'
+          />
+          <Dial
+            title = 'F.B.P. Average Temp'
+            value = {FBPA4Temp}
+            unit = '°C'
+            min={0}
+            max={100}
+            size={width / 12.5}
+            threshold={0.15}
+            errorThreshold={0.05}
+            customClass='FBPA4TempDial'
+          />
+
+
+
         </div>
-        <StateDisplay title='READY TO LAUNCH' />
+        <StateDisplay title='READY TO LAUNCH'/>
+
       </div>
 
       <div className='FBPContainer'>
@@ -102,6 +271,22 @@ const DataView = () => {
           unit='A'
           min={0}
           max={480}
+          decimals={0}
+        />
+        <ProgressBar
+          title='F.B.P. State Of Charge'
+          value={FBPStateOfCharge}
+          unit='%'
+          min={0}
+          max={100}
+          decimals={0}
+        />
+        <ProgressBar
+          title='F.B.P. Isolator'
+          value={FBPIsolator}
+          unit=''
+          min={0}
+          max={5}
           decimals={0}
         />
       </div>
