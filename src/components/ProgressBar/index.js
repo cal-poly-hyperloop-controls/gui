@@ -18,6 +18,7 @@ import CountUp from 'react-countup';
  */
 const ProgressBar = props => {
   const range = props.max - props.min;
+  const { innerWidth: width, innerHeight: height } = window;
   let percent = (100 * (props.value - props.min)) / range;
   let color = Colors.blue;
   if (percent < 0) {
@@ -39,13 +40,13 @@ const ProgressBar = props => {
           <div
             style={{
               background: color,
-              transform: `scaleX(${percent * 1.43})`,
+              transform: `scaleX(${percent * 0.935})`,
             }}
             class='center'></div>
           <div
             style={{
               background: color,
-              transform: `translateX(${percent * 1.43 + 3}px)`,
+              transform: `translateX(${percent / 5.25}vh)`,
             }}
             class='right'></div>
         </div>

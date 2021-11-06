@@ -142,7 +142,24 @@
 
 .DataView .FBPContainer {
   position: absolute;
-  right: 50px;
-  top: 195px;
+  left: 90vw;
+  top: 10vh;
+  transform: translate(-50%, 0)
+
+}
+
+.DataView .RBPContainer {
+  position: absolute;
+  left: 90vw;
+  top: 43vh;
+  transform: translate(-50%, 0)
+
+}
+
+.DataView .ControlBattery {
+  position: absolute;
+  left: 90vw;
+  top: 76vh;
+  transform: translate(-50%, 0)
 
 }
