@@ -1,0 +1,21 @@
+@import '../../constants/colors';
+
+.StatusBullet {
+  display:flex;
+}
+
+.StatusBullet .title{
+  color:$lightPurple;
+  margin-bottom:10px;
+  margin-left:12px;
+  margin-top:5px;
+  font-family:'Lato-Bold';
+  font-size:14px;
+}
+
+.StatusBullet .statusMessage{
+  color:$lightPurple;
+  opacity: 0.5;
+  margin-left:12px;
+  font-size:14px;
+}

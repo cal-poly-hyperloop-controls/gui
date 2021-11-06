@@ -1,0 +1,48 @@
+@import '../../constants/colors';
+
+.Dial {
+  position: relative;
+  display: flex;
+}
+
+.Dial .container{}
+
+.Dial .dialSvg {
+  flex: 1;
+}
+
+.Dial .animatedDialElement {
+  transition: 0.95833s;
+}
+
+.Dial .animatedDialElement2 {
+  transition: 1s;
+}
+
+.Dial .dataContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  width: 100%;
+  text-align: center;
+  align-self: center;
+}
+
+.Dial .title {
+  color: #ffffff;
+  font-family: 'Lato-thin';
+  margin: 0;
+}
+
+.Dial .value {
+  color: #ffffff;
+  font-family: 'Lato-Regular';
+  margin: 30px;
+}
+
+.Dial .unit {
+  color: #ffffff;
+  font-family: 'Lato-thin';
+  margin: 0;
+}

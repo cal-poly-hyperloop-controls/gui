@@ -1,0 +1,24 @@
+@import '../../constants/colors';
+
+.DataContainer {
+  display: flex;
+  flex: 1;
+}
+
+.systemButton {
+  position: absolute;
+  bottom: 200px;
+  left: 40px;
+}
+
+.batteryCellContainer {
+  position: absolute;
+  bottom: 200px;
+  right: 115px;
+}
+
+.batteryButton {
+  color: $white !important;
+  background-color: rgba(1,1,1,0) !important;
+  border:2px solid rgba(148,153,195,.5);
+}

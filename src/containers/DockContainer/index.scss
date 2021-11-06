@@ -1,0 +1,35 @@
+@import '../../constants/colors';
+
+.DockContainer {
+  width: 100%;
+  height: 90%;
+  background: $black;
+  position: absolute;
+  top: calc(100% - 15px);
+  justify-content: center;
+  display: flex;
+  transition: 0.5s ease-out;
+}
+
+.DockContainer.open {
+  top: 15%;
+}
+
+.trapezoid {
+  width: 630px;
+  height: 90px;
+  background: $black;
+  transform: perspective(6px) rotateX(1deg);
+  position: absolute;
+  top: -90px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+}
+
+.buttonsContainer {
+  position: absolute;
+  top: -76px;
+  display: flex;
+  text-align: center;
+  width: 530px;
+  justify-content: space-between;
+}
