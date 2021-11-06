@@ -4,22 +4,25 @@
   background: $white;
   background-color: transparent;
   border-radius: 75px;
-  border: 3px solid $lightPurple;
-  width: 264px;
+  border: 0.2vw solid $lightPurple;
+  width: 12vw;
   text-align: center;
-  padding-top: 7px;
-  padding-bottom: 15px;
+  padding-top: 0.4vw;
+  padding-bottom: 0.7vw;
+  position: absolute;
+  top: 40vh;
+  transform: translate(-50%, 0);
 }
 
 .STATE{
  color: $lightPurple;
- margin-bottom: 7px;
- font-size: 14px;
+ margin-bottom: 0.4vw;
+ font-size: 0.6vw;
 }
 
 .title{
  color:white;
- font-size: 20px;
+ font-size: 0.9vw;
 }
 
 p{

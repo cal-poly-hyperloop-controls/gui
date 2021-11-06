@@ -2,20 +2,22 @@
 
 .StatusBullet {
   display:flex;
+  position: absolute;
+  left: 25vw;
 }
 
 .StatusBullet .title{
   color:$lightPurple;
-  margin-bottom:10px;
-  margin-left:12px;
-  margin-top:5px;
+  margin-bottom:0.55vw;
+  margin-left:0.6vw;
+  margin-top:0.3vw;
   font-family:'Lato-Bold';
-  font-size:14px;
+  font-size:0.7vw;
 }
 
 .StatusBullet .statusMessage{
   color:$lightPurple;
   opacity: 0.5;
-  margin-left:12px;
-  font-size:14px;
+  margin-left:0.6vw;
+  font-size:0.67vw;
 }

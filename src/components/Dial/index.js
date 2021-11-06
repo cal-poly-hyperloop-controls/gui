@@ -196,13 +196,13 @@ const Dial = props => {
         {renderTick(warningMax)}
       </svg>
       <div className='dataContainer'>
-        <h5 className='title' style={{ fontSize: 0.05 * props.size }}>
+        <h5 className='title' style={{ fontSize: 0.075 * props.size }}>
           {props.title}
         </h5>
         <h5 className='value' style={{ fontSize: 0.18 * props.size }}>
           <CountUp end={props.value} duration={1} decimals={1} />
         </h5>
-        <h5 className='unit' style={{ fontSize: 0.06 * props.size }}>
+        <h5 className='unit' style={{ fontSize: 0.1 * props.size }}>
           {props.unit}
         </h5>
       </div>
