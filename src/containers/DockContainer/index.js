@@ -11,20 +11,22 @@ import Colors from '../../constants/Colors';
 
 //Import Components
 import IconButton from '../../components/IconButton';
+import Chart from '../../components/Chart';
+import Info from '../../components/Info';
 
 /**
  * Contains all the views displaying pod data
  */
 const DockContainer = () => {
-  const [chartOpen, setchartOpen] = useState(false);
-
+  const [openMenu, setOpenMenu] = useState("");
+  
   return (
-    <div className={chartOpen ? 'DockContainer open' : 'DockContainer'}>
+    <div className={openMenu !== '' ? 'DockContainer open' : 'DockContainer'}>
       <div className='trapezoid' />
       <div className='buttonsContainer'>
         <IconButton
           title='Chart'
-          onClick={() => setchartOpen(!chartOpen)}
+          onClick={() => setOpenMenu(openMenu !== '' ?  "": "Chart")}
           icon='Chart'
           iconColor={Colors.white}
         />
@@ -48,13 +50,33 @@ const DockContainer = () => {
         />
         <IconButton
           title='Info'
-          onClick={() => console.log('Info button clicked')}
+          onClick={() => setOpenMenu(openMenu !== "" ? "":"Info")}
           icon='Info'
           iconColor={Colors.white}
         />
       </div>
+
+      <OpenMenu name={openMenu}/>
     </div>
   );
 };
+
+const OpenMenu = (props) => {
+
+  const displayName = props.name;
+  
+  if (displayName === "Chart"){
+    return(
+      <Chart />
+    );
+  }else if (displayName === "Info"){
+    return(
+      <Info />
+    );
+  }
+  return(
+    <div name = "dummy" />
+  )
+}
 
 export default DockContainer;
