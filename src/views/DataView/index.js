@@ -40,6 +40,18 @@ const DataView = () => {
   const [FBPCurrent, setFBPCurrent] = useState(0);
   const [FBPStateOfCharge, setFBPStateOfCharge] = useState(0);
   const [FBPIsolator, setFBPIsolator] = useState(0);
+  const [FBPLowCell, setFBPLowCell] = useState(0);
+  const [FBPHighCell, setFBPHighCell] = useState(0);
+
+  const [RBPVoltage, setRBPVoltage] = useState(0);
+  const [RBPCurrent, setRBPCurrent] = useState(0);
+  const [RBPStateOfCharge, setRBPStateOfCharge] = useState(0);
+  const [RBPIsolator, setRBPIsolator] = useState(0);
+  const [RBPLowCell, setRBPLowCell] = useState(0);
+  const [RBPHighCell, setRBPHighCell] = useState(0);
+
+  const [ControlsBattery, setControlsBattery] = useState(0);
+
 
 
   useEffect(() => {
@@ -64,7 +76,17 @@ const DataView = () => {
       setFBPVoltage(Math.random(1) * 32 + 40);
       setFBPCurrent(Math.random(1) * 490);
       setFBPStateOfCharge(Math.random(1) * 100);
-      setFBPIsolator((Math.random(1) * 50) / 10);
+      setFBPIsolator(Math.random(1) * 5);
+      setFBPLowCell((Math.random(1) * 1.6) + 2);
+      setFBPHighCell(Math.random(1) * 5);
+
+      setRBPVoltage(Math.random(1) * 32 + 40);
+      setRBPCurrent(Math.random(1) * 490);
+      setRBPStateOfCharge(Math.random(1) * 100);
+      setRBPIsolator(Math.random(1) * 5);
+      setRBPLowCell((Math.random(1) * 1.6) + 2);
+      setRBPHighCell(Math.random(1) * 5);
+      setControlsBattery(Math.random(1) * 3 + 11);
     }, 2000);
   }, [acceleration]);
 
@@ -287,6 +309,84 @@ const DataView = () => {
           unit=''
           min={0}
           max={5}
+          decimals={1}
+        />
+        <ProgressBar
+          title='F.B.P. Low Cell'
+          value={FBPLowCell}
+          unit='V'
+          min={2}
+          max={3.6}
+          decimals={1}
+        />
+        <ProgressBar
+          title='F.B.P. High Cell'
+          value={FBPHighCell}
+          unit='V'
+          min={0}
+          max={5}
+          decimals={1}
+        />
+      </div>
+
+      <div className='RBPContainer'>
+        <ProgressBar
+          title='R.B.P. Voltage'
+          value={RBPVoltage}
+          unit='V'
+          min={40}
+          max={72}
+          decimals={1}
+        />
+        <ProgressBar
+          title='R.B.P. Current'
+          value={RBPCurrent}
+          unit='A'
+          min={0}
+          max={480}
+          decimals={0}
+        />
+        <ProgressBar
+          title='R.B.P. State Of Charge'
+          value={RBPStateOfCharge}
+          unit='%'
+          min={0}
+          max={100}
+          decimals={0}
+        />
+        <ProgressBar
+          title='R.B.P. Isolator'
+          value={RBPIsolator}
+          unit=''
+          min={0}
+          max={5}
+          decimals={1}
+        />
+        <ProgressBar
+          title='R.B.P. Low Cell'
+          value={RBPLowCell}
+          unit='V'
+          min={2}
+          max={3.6}
+          decimals={1}
+        />
+        <ProgressBar
+          title='R.B.P. High Cell'
+          value={RBPHighCell}
+          unit='V'
+          min={0}
+          max={5}
+          decimals={1}
+        />
+      </div>
+
+      <div className='ControlBattery'>
+        <ProgressBar
+          title='Control Battery'
+          value={ControlsBattery}
+          unit='V'
+          min={11}
+          max={14}
           decimals={0}
         />
       </div>
