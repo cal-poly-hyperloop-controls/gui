@@ -61,6 +61,11 @@ const DockContainer = () => {
   );
 };
 
+const shouldChangeOpen = (openMenu, prev, name) => {
+  const closed = (openMenu !== '' );
+  
+}
+
 const OpenMenu = (props) => {
 
   const displayName = props.name;
@@ -77,6 +82,7 @@ const OpenMenu = (props) => {
   return(
     <div name = "dummy" />
   )
+
 }
 
 export default DockContainer;
