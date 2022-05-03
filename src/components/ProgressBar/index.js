@@ -46,7 +46,7 @@ const ProgressBar = props => {
           <div
             style={{
               background: color,
-              transform: `translateX(${percent / 5.25}vh)`,
+              transform: `translateX(${percent / 5.9}vh)`,
             }}
             class='right'></div>
         </div>
