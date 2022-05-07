@@ -30,6 +30,8 @@ const DockContainer = () => {
           icon='Chart'
           iconColor={Colors.white}
         />
+
+        
         <IconButton
           title='Generate Report'
           onClick={() => console.log('Generate Report button clicked')}
