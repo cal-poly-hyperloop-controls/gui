@@ -1,6 +1,28 @@
 @import '../../constants/colors';
 
 .Chart {
-  background: $white;
+  background: $black;
+  margin-top: 30px;
   position: absolute;
+  padding: 0px;
+  margin: 0px;
+  left: 50px;
+  display: flex;
 }
+
+.data-table{
+  background: $black;
+  margin-top: 35px;
+  margin-left: 20px;
+  color: white;
+  width:400px;
+  height: 500px;
+  display: flex;
+  flex-wrap:wrap;
+}
+
+.axis-data{
+  margin: 15px;
+  font-size: 20px;
+}
+
