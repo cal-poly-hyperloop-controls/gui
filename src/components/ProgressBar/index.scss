@@ -1,7 +1,7 @@
 @import '../../constants/colors';
 
 .ProgressBar {
-  width: 30vh;
+  width: 15vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,17 +24,26 @@
 }
 
 .ProgressBar .left {
+  position: absolute;
   border-radius: 2vh 0 0 2vh;
+  z-index: 2;
 }
-.ProgressBar .right {
+
+.ProgressBar .right{
   position: absolute;
   border-radius: 0 2vh 2vh 0;
-  left: 0.25vw;
-}
-.ProgressBar .center {
-  left: 0.25vw;
-  width: 0.1vw;
+  z-index: 3;
+  left: -0.25vw;
   transform-origin: left;
+}
+
+.ProgressBar .center {
+  position: absolute;
+  border-radius: 2vh 2vh 2vh 2vh;
+  left: 0;
+  width: 10vw;
+  transform-origin: left;
+  z-index: 1;
 }
 
 .ProgressBar .title {

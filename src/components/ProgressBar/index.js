@@ -24,12 +24,15 @@ const ProgressBar = props => {
   if (percent < 0) {
     color = Colors.red;
   }
-  if (percent < 0) {
-    percent = 0; //reason why 4 is used is to show a little of the bar and not completely hide the bar
+  if (percent < 4) {
+    percent = 4; //reason why 4 is used is to show a little of the bar and not completely hide the bar
   } else if (percent > 100) {
     percent = 100;
     color = Colors.red;
   }
+
+  var percentDecimal = percent/100;
+  var translateRight = percent/100 * 10;
 
   return (
     <div className='ProgressBar'>
@@ -40,13 +43,13 @@ const ProgressBar = props => {
           <div
             style={{
               background: color,
-              transform: `scaleX(${percent * 0.935})`,
+              transform: `scaleX(${percentDecimal})`,
             }}
             class='center'></div>
           <div
             style={{
               background: color,
-              transform: `translateX(${percent / 5.9}vh)`,
+              transform: `translateX(${translateRight}vw)`,
             }}
             class='right'></div>
         </div>

@@ -387,7 +387,7 @@ const DataView = () => {
           unit='V'
           min={11}
           max={14}
-          decimals={0}
+          decimals={1}
         />
       </div>
 
