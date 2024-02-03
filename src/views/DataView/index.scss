@@ -19,6 +19,15 @@
 
 }
 
+.DataView .timer{
+  position: absolute;
+  top: 5vh;
+  right: 22.5vw;
+  color: #ffffff;
+  font-family: 'Lato-thin';
+  margin: 0;
+}
+
 .DataView .centerDisplay {
   display: absolute;
   flex-direction: column;
@@ -78,7 +87,7 @@
   transform: translate(-50%, 0);
 }
 
-.DataView .speedDial {
+.DataView .depthDial {
   position: absolute;
   transform: translate(-50%, 0);
 }

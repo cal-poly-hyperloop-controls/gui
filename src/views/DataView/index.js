@@ -18,7 +18,9 @@ import Colors from '../../constants/Colors';
  * Displays all the data components. Pretty much most of what you see in the GUI
  */
 const DataView = () => {
-  const [speed, setSpeed] = useState(0);
+  const { innerWidth: width, innerHeight: height } = window;
+  
+  const [depth, setDepth] = useState(0);
   const [acceleration, setAcceleration] = useState(0);
   const [maglev, setMaglev] = useState(0);
   const [solTemp, setSolTemp] = useState(0);
@@ -33,7 +35,6 @@ const DataView = () => {
   const [FBPA2Temp, setFBPA2Temp] = useState(0);
   const [FBPA3Temp, setFBPA3Temp] = useState(0);
   const [FBPA4Temp, setFBPA4Temp] = useState(0);
-  const { innerWidth: width, innerHeight: height } = window;
 
 
   const [FBPVoltage, setFBPVoltage] = useState(0);
@@ -52,12 +53,14 @@ const DataView = () => {
 
   const [ControlsBattery, setControlsBattery] = useState(0);
 
-
+  const [timer, setTimer] = useState(0);
 
   useEffect(() => {
     //TEMPORARY: randomizes a value to demonstrate dial animations
     setTimeout(() => {
-      setSpeed(Math.random(1) * 105);
+      setDepth(depth + 0.1);
+      if(depth > 2) setDepth(0);
+      setTimer(timer + 1);
       setAcceleration(Math.random(1) * 25);
       setMaglev(Math.random(1) * 15);
       setSolTemp((Math.random(1) * 50) - 20);
@@ -87,19 +90,19 @@ const DataView = () => {
       setRBPLowCell((Math.random(1) * 1.6) + 2);
       setRBPHighCell(Math.random(1) * 5);
       setControlsBattery(Math.random(1) * 3 + 11);
-    }, 2000);
+    }, 1000);
   }, [acceleration]);
 
   return (
     <div className='DataView'>
-      <img className='logo' src={logoImage} alt='logo' />
-      <img className='pod' src={podImage} alt='pod' />
-      <DistanceBar />
       <StatusBullet 
         title='ALL SYSTEMS CHECK'
         statusMessage='Safe'
         health={true}
       />
+      <div className='timer'>
+      {timer}
+      </div>
       <div className='centerDisplay'>
         <div className='centerDialContainer'>
           <Dial
@@ -181,20 +184,20 @@ const DataView = () => {
             rotation={-45}
           />
           <Dial
-            title='POD SPEED'
-            value={speed}
-            unit='M/S'
+            title='Drill Depth'
+            value={depth}
+            unit='ft'
             min={0}
-            max={100}
+            max={2}
             size={width / 5}
             threshold={0.15}
             errorThreshold={0.05}
-            customClass='speedDial'
+            customClass='depthDial'
           />
           <Dial
-            title='MagLev Levitation'
+            title='Drill Speed'
             value={maglev}
-            unit='MM'
+            unit='M/S'
             min={0}
             max={10}
             size={width/10}
